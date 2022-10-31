@@ -1,27 +1,27 @@
-import java.util.ArrayList;
+package model;
 
-public class Module {
+import java.util.ArrayList;;
+
+public class Course {
     private final String name;
     private final int maxScore;
     private final int maxHomeworksScore;
     private final int maxExercisesScore;
     private final int maxSeminarsScore;
     private final int maxActivitiesScore;
-    private final ArrayList<Task> controlsQuestions;
-    private final ArrayList<Task> homeworks;
-    private final ArrayList<Task> exercises;
+    private final ArrayList<Module> modules;
+    private final ArrayList<Student> students;
 
-    public Module(String name, int maxHomeworksScore, int maxExercisesScore, int maxActivitiesScore, int maxSeminarsScore,
-                  ArrayList<Task> homeworks, ArrayList<Task> exercises, ArrayList<Task> controlsQuestions) {
+    public Course(String name, int maxHomeworksScore, int maxExercisesScore,
+                  int maxActivitiesScore, int maxSeminarsScore, ArrayList<Module> modules, ArrayList<Student> students) {
         this.name = name;
         this.maxHomeworksScore = maxHomeworksScore;
         this.maxExercisesScore = maxExercisesScore;
         this.maxActivitiesScore = maxActivitiesScore;
         this.maxSeminarsScore = maxSeminarsScore;
         maxScore = maxHomeworksScore + maxExercisesScore;
-        this.homeworks = homeworks;
-        this.exercises = exercises;
-        this.controlsQuestions = controlsQuestions;
+        this.modules = modules;
+        this.students = students;
     }
 
     public String getName() {
@@ -48,15 +48,11 @@ public class Module {
         return maxActivitiesScore;
     }
 
-    public ArrayList<Task> getControlsQuestions() {
-        return controlsQuestions;
+    public ArrayList<Module> getModules() {
+        return modules;
     }
 
-    public ArrayList<Task> getHomeworks() {
-        return homeworks;
-    }
-
-    public ArrayList<Task> getExercises() {
-        return exercises;
+    public ArrayList<Student> getStudents() {
+        return students;
     }
 }

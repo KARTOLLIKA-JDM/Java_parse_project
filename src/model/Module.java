@@ -1,23 +1,23 @@
-import java.util.ArrayList;;
+package model;
 
-public class Course {
+import java.util.ArrayList;
+
+public class Module {
     private final String name;
     private final int maxScore;
     private final int maxHomeworksScore;
     private final int maxExercisesScore;
     private final int maxSeminarsScore;
     private final int maxActivitiesScore;
-    private final ArrayList<Module> modules;
 
-    public Course(String name, int maxHomeworksScore, int maxExercisesScore,
-                  int maxActivitiesScore, int maxSeminarsScore, ArrayList<Module> modules) {
+    public Module(String name, int maxHomeworksScore, int maxExercisesScore,
+                  int maxActivitiesScore, int maxSeminarsScore) {
         this.name = name;
         this.maxHomeworksScore = maxHomeworksScore;
         this.maxExercisesScore = maxExercisesScore;
         this.maxActivitiesScore = maxActivitiesScore;
         this.maxSeminarsScore = maxSeminarsScore;
         maxScore = maxHomeworksScore + maxExercisesScore;
-        this.modules = modules;
     }
 
     public String getName() {
@@ -42,9 +42,5 @@ public class Course {
 
     public int getMaxActivitiesScore() {
         return maxActivitiesScore;
-    }
-
-    public ArrayList<Module> getModules() {
-        return modules;
     }
 }
