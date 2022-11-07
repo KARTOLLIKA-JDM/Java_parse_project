@@ -1,28 +1,28 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student extends Person {
     private String group;
     private final ArrayList<Task> homeworks;
     private final ArrayList<Task> exercises;
-    private final String[] scoresStudent;
+
+    private final ArrayList<Task> activities;
+    private final ArrayList<Task> cem;
 
 
-    public Student(String name, int age, String gender, String email,
-                   String group, ArrayList<Task> homeworks, ArrayList<Task> exercises, String[] score) {
+    public Student(String name, int age, Gender gender, String email,
+                   String group, ArrayList<Task> homeworks, ArrayList<Task> exercises,ArrayList<Task> activities, ArrayList<Task> cem) {
         super(name, age, gender, email);
         this.group = group;
         this.homeworks = homeworks;
         this.exercises = exercises;
-        this.scoresStudent = score;
+        this.activities = activities;
+        this.cem = cem;
     }
 
-    private void completionScores() {
-        for(var score : scoresStudent){
-            homeworks.get(0).setCurrScore(score);
-        }
-    }
 
     public String getGroup() {
         return group;
@@ -43,9 +43,5 @@ public class Student extends Person {
 
     public ArrayList<Task> getExercises() {
         return exercises;
-    }
-
-    public String[] getScoresStudent() {
-        return scoresStudent;
     }
 }

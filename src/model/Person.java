@@ -8,10 +8,10 @@ public class Person {
     private final Gender gender;
     private final String email;
 
-    public Person(String name, int age, String gender, String email) {
+    public Person(String name, int age, Gender gender, String email) {
         this.name = name;
         this.age = age;
-        this.gender = new Gender(gender);
+        this.gender = Gender.UNKNOWN;
         this.email = email;
     }
 
@@ -19,9 +19,10 @@ public class Person {
         return age;
     }
 
-    public String getGender() {
-        return gender.getGender();
+    public Gender getGender() {
+        return gender;
     }
+
 
     public String getEmail() {
         return email;
@@ -29,7 +30,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("%s %s %s %s", name, age, gender.getGender(), email);
+        return String.format("%s %s %s %s", name, age, gender, email);
     }
 
     public String getName() {
